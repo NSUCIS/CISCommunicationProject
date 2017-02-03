@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C6A7CA2-0246-4931-8C11-8D49B623CA44}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>CIS_Internal_and_External_Communications.My.MyApplication</StartupObject>
+    <RootNamespace>CIS_Internal_and_External_Communications</RootNamespace>
+    <AssemblyName>CIS Internal and External Communications</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CIS Internal and External Communications.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CIS Internal and External Communications.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="emailMoDsquad.vb" />
+    <Compile Include="frmAddAlumniContact.Designer.vb">
+      <DependentUpon>frmAddAlumniContact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddAlumniContact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEmployersContact.Designer.vb">
+      <DependentUpon>frmAddEmployersContact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddEmployersContact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CIS_Communications_ContactsDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CIS_Communications_ContactsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CIS_Communications_ContactsDataSet.vb">
+      <DependentUpon>CIS_Communications_ContactsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddContactvb.Designer.vb">
+      <DependentUpon>frmAddContactvb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddContactvb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddFacultyContact.Designer.vb">
+      <DependentUpon>frmAddFacultyContact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddFacultyContact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddHighSchoolContact.Designer.vb">
+      <DependentUpon>frmAddHighSchoolContact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddHighSchoolContact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddInternshipContact.Designer.vb">
+      <DependentUpon>frmAddInternshipContact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddInternshipContact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddISCContact.Designer.vb">
+      <DependentUpon>frmAddISCContact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddISCContact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddMajorContact.Designer.vb">
+      <DependentUpon>frmAddMajorContact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddMajorContact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddNetworkingGroupContact.Designer.vb">
+      <DependentUpon>frmAddNetworkingGroupContact.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddNetworkingGroupContact.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCISCommunications.Designer.vb">
+      <DependentUpon>frmCISCommunications.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCISCommunications.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAddAlumniContact.resx">
+      <DependentUpon>frmAddAlumniContact.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddContactvb.resx">
+      <DependentUpon>frmAddContactvb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEmployersContact.resx">
+      <DependentUpon>frmAddEmployersContact.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddFacultyContact.resx">
+      <DependentUpon>frmAddFacultyContact.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddHighSchoolContact.resx">
+      <DependentUpon>frmAddHighSchoolContact.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddISCContact.resx">
+      <DependentUpon>frmAddISCContact.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddMajorContact.resx">
+      <DependentUpon>frmAddMajorContact.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCISCommunications.resx">
+      <DependentUpon>frmCISCommunications.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CIS_Communications_ContactsDataSet.xsc">
+      <DependentUpon>CIS_Communications_ContactsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CIS_Communications_ContactsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CIS_Communications_ContactsDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CIS_Communications_ContactsDataSet.xss">
+      <DependentUpon>CIS_Communications_ContactsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CIS Communications Contacts.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
