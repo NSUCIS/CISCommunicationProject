@@ -29,7 +29,7 @@ Partial Class frmCISCommunications
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.tabAlumni = New System.Windows.Forms.TabPage()
-        Me.dgvOutputAlumni = New System.Windows.Forms.DataGridView()
+        Me.dgvAlumni = New System.Windows.Forms.DataGridView()
         Me.tabFaculty = New System.Windows.Forms.TabPage()
         Me.dgvFaculty = New System.Windows.Forms.DataGridView()
         Me.tabISClub = New System.Windows.Forms.TabPage()
@@ -50,7 +50,7 @@ Partial Class frmCISCommunications
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnDeleteContact = New System.Windows.Forms.Button()
         Me.tabAlumni.SuspendLayout()
-        CType(Me.dgvOutputAlumni, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvAlumni, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabFaculty.SuspendLayout()
         CType(Me.dgvFaculty, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabISClub.SuspendLayout()
@@ -118,7 +118,7 @@ Partial Class frmCISCommunications
         '
         'tabAlumni
         '
-        Me.tabAlumni.Controls.Add(Me.dgvOutputAlumni)
+        Me.tabAlumni.Controls.Add(Me.dgvAlumni)
         Me.tabAlumni.Location = New System.Drawing.Point(4, 23)
         Me.tabAlumni.Margin = New System.Windows.Forms.Padding(2)
         Me.tabAlumni.Name = "tabAlumni"
@@ -128,18 +128,18 @@ Partial Class frmCISCommunications
         Me.tabAlumni.Text = "Alumni"
         Me.tabAlumni.UseVisualStyleBackColor = True
         '
-        'dgvOutputAlumni
+        'dgvAlumni
         '
-        Me.dgvOutputAlumni.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgvOutputAlumni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvOutputAlumni.Location = New System.Drawing.Point(-3, 0)
-        Me.dgvOutputAlumni.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgvOutputAlumni.Name = "dgvOutputAlumni"
-        Me.dgvOutputAlumni.RowHeadersVisible = False
-        Me.dgvOutputAlumni.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.dgvOutputAlumni.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvOutputAlumni.Size = New System.Drawing.Size(787, 226)
-        Me.dgvOutputAlumni.TabIndex = 0
+        Me.dgvAlumni.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvAlumni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAlumni.Location = New System.Drawing.Point(-3, 0)
+        Me.dgvAlumni.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvAlumni.Name = "dgvAlumni"
+        Me.dgvAlumni.RowHeadersVisible = False
+        Me.dgvAlumni.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.dgvAlumni.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvAlumni.Size = New System.Drawing.Size(787, 226)
+        Me.dgvAlumni.TabIndex = 0
         '
         'tabFaculty
         '
@@ -394,7 +394,7 @@ Partial Class frmCISCommunications
         Me.Name = "frmCISCommunications"
         Me.Text = "CIS Communications"
         Me.tabAlumni.ResumeLayout(False)
-        CType(Me.dgvOutputAlumni, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvAlumni, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabFaculty.ResumeLayout(False)
         CType(Me.dgvFaculty, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabISClub.ResumeLayout(False)
@@ -422,7 +422,7 @@ Partial Class frmCISCommunications
     Friend WithEvents PrintPreviewDialog1 As System.Windows.Forms.PrintPreviewDialog
     Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
     Friend WithEvents tabAlumni As System.Windows.Forms.TabPage
-    Friend WithEvents dgvOutputAlumni As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvAlumni As System.Windows.Forms.DataGridView
     Friend WithEvents tabFaculty As System.Windows.Forms.TabPage
     Friend WithEvents dgvFaculty As System.Windows.Forms.DataGridView
     Friend WithEvents tabISClub As System.Windows.Forms.TabPage
