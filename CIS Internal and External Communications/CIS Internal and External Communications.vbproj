@@ -70,6 +70,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBManager.vb" />
     <Compile Include="emailMoDsquad.vb" />
     <Compile Include="frmAddAlumniContact.Designer.vb">
       <DependentUpon>frmAddAlumniContact.vb</DependentUpon>

@@ -34,7 +34,7 @@ Public Class frmAddAlumniContact
         da.Fill(ds, "Alumni")
         Dim view As New DataView(tables(0))
         source1.DataSource = view
-        frmCISCommunications.dgvOutputAlumni.DataSource = view
+        frmCISCommunications.dgvAlumni.DataSource = view
 
         Me.Close()
     End Sub

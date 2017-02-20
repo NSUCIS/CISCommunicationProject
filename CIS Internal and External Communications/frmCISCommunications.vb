@@ -1,71 +1,23 @@
 ﻿Imports System.Data.OleDb
 Public Class frmCISCommunications
 
+    Dim db As DBManager
+    Dim dgvDict As Dictionary(Of String, DataGridView) = New Dictionary(Of String, DataGridView)
 
     Private Sub frmCISCommunications_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frmLogin.ShowDialog()
+        db = New DBManager
+        'Variables to make filling tables easier in control loops
+        Dim tableNames = New String() {"Advisory Board", "Faculty", "ISC", "Majors", "Alumni", "High Schools", "Internships", "Networking Groups"}
+        Dim dgvArray = New DataGridView() {dgvAdvisoryBoard, dgvFaculty, dgvISC, dgvMajors, dgvAlumni, dgvHighSchool, dgvInternships, dgvNetworkingGroups}
 
-        Dim da As OleDbDataAdapter
-        Dim ds As DataSet
-        Dim tables As DataTableCollection
-        Dim source1 As New BindingSource
-        Dim connString As String
-        Dim dataSourceString As String
-        dataSourceString = "Data Source=" & My.Application.Info.DirectoryPath & "\CIS Communications Contacts.accdb"
-        Dim myConnection As OleDbConnection = New OleDbConnection
-        connString = "Provider=Microsoft.ACE.OLEDB.12.0;" & dataSourceString
-        myConnection.ConnectionString = connString
-        myConnection.Open()
-
-        myConnection = New OleDbConnection
-        myConnection.ConnectionString = connString
-        ds = New DataSet
-        tables = ds.Tables
-        da = New OleDbDataAdapter("Select * from [Advisory Board]", myConnection)
-        da.Fill(ds, "Advisory Board")
-        Dim view As New DataView(tables(0))
-        source1.DataSource = view
-        dgvAdvisoryBoard.DataSource = view
-
-        ds = New DataSet
-        tables = ds.Tables
-        da = New OleDbDataAdapter("Select * from [Faculty]", myConnection)
-        da.Fill(ds, "Faculty")
-        Dim view1 As New DataView(tables(0))
-        source1.DataSource = view1
-        dgvFaculty.DataSource = view1
-
-        ds = New DataSet
-        tables = ds.Tables
-        da = New OleDbDataAdapter("Select * from [ISC]", myConnection)
-        da.Fill(ds, "ISC")
-        Dim view2 As New DataView(tables(0))
-        source1.DataSource = view2
-        dgvISC.DataSource = view2
-
-        ds = New DataSet
-        tables = ds.Tables
-        da = New OleDbDataAdapter("Select * from [Majors]", myConnection)
-        da.Fill(ds, "Majors")
-        Dim view3 As New DataView(tables(0))
-        source1.DataSource = view3
-        dgvMajors.DataSource = view3
-
-        ds = New DataSet
-        tables = ds.Tables
-        da = New OleDbDataAdapter("Select * from [Alumni]", myConnection)
-        da.Fill(ds, "Alumni")
-        Dim view4 As New DataView(tables(0))
-        source1.DataSource = view4
-        dgvOutputAlumni.DataSource = view4
-
-        ds = New DataSet
-        tables = ds.Tables
-        da = New OleDbDataAdapter("Select * from [High Schools]", myConnection)
-        da.Fill(ds, "High Schools")
-        Dim view5 As New DataView(tables(0))
-        source1.DataSource = view5
-        dgvHighSchool.DataSource = view5
+        For i As Integer = 0 To tableNames.Count - 1 'For all the names of tables...
+            dgvDict.Add(tableNames(i), dgvArray(i))  '  Add the entry to the dictionary
+        Next
+        'Use the dictionary to loop through all the DataGridViews and fill their tables
+        For Each name As String In dgvDict.Keys
+            dgvDict(name).DataSource = db.FillTable(name)
+        Next
 
     End Sub
 
@@ -75,7 +27,7 @@ Public Class frmCISCommunications
     End Sub
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
-        
+
     End Sub
 
 
@@ -102,139 +54,33 @@ Public Class frmCISCommunications
     End Sub
 
     Private Sub btnDeleteContact_Click(sender As Object, e As EventArgs) Handles btnDeleteContact.Click
-        Dim DeleteQuery As String
-        Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\CIS Internal and External Communications\CIS Internal and External Communications\CIS Communications Contacts.accdb"
-        Dim myConnection As OleDbConnection = New OleDbConnection
-        myConnection.ConnectionString = connString
-
         If MessageBox.Show("Are you sure you want to delete this contact?", "Delete Contact", MessageBoxButtons.YesNo) = MsgBoxResult.Yes Then
+            Dim name As String = ""
             If TabControl1.SelectedTab Is tabAdvisoryBoard Then
-                DeleteQuery = "delete * from [Advisory Board] where ID = @ID"
-                Dim cmd As OleDbCommand = New OleDbCommand(DeleteQuery, myConnection)
-                myConnection.Open()
-                cmd.Parameters.AddWithValue("@ID", dgvAdvisoryBoard.CurrentRow.Cells(0).Value.ToString)
-                cmd.ExecuteNonQuery()
-                cmd.Dispose()
-                Dim da As OleDbDataAdapter
-                Dim ds As DataSet
-                Dim tables As DataTableCollection
-                Dim source1 As New BindingSource
-                ds = New DataSet
-                tables = ds.Tables
-                da = New OleDbDataAdapter("Select * from [Advisory Board]", myConnection)
-                da.Fill(ds, "Advisory Board")
-                Dim view As New DataView(tables(0))
-                source1.DataSource = view
-                Me.dgvAdvisoryBoard.DataSource = view
-                myConnection.Close()
-            ElseIf TabControl1.SelectedTab Is tabISClub Then
-                DeleteQuery = "delete * from [ISC] where ID = @ID"
-                Dim cmd As OleDbCommand = New OleDbCommand(DeleteQuery, myConnection)
-                myConnection.Open()
-                cmd.Parameters.AddWithValue("@ID", dgvISC.CurrentRow.Cells(0).Value.ToString)
-                cmd.ExecuteNonQuery()
-                cmd.Dispose()
-                Dim da As OleDbDataAdapter
-                Dim ds As DataSet
-                Dim tables As DataTableCollection
-                Dim source1 As New BindingSource
-                ds = New DataSet
-                tables = ds.Tables
-                da = New OleDbDataAdapter("Select * from [ISC]", myConnection)
-                da.Fill(ds, "ISC")
-                Dim view As New DataView(tables(0))
-                source1.DataSource = view
-                Me.dgvISC.DataSource = view
-                myConnection.Close()
+                name = "Advisory Board"
             ElseIf TabControl1.SelectedTab Is tabFaculty Then
-                DeleteQuery = "delete * from [Faculty] where ID = @ID"
-                Dim cmd As OleDbCommand = New OleDbCommand(DeleteQuery, myConnection)
-                myConnection.Open()
-                cmd.Parameters.AddWithValue("@ID", dgvFaculty.CurrentRow.Cells(0).Value.ToString)
-                cmd.ExecuteNonQuery()
-                cmd.Dispose()
-                Dim da As OleDbDataAdapter
-                Dim ds As DataSet
-                Dim tables As DataTableCollection
-                Dim source1 As New BindingSource
-                ds = New DataSet
-                tables = ds.Tables
-                da = New OleDbDataAdapter("Select * from [Faculty]", myConnection)
-                da.Fill(ds, "Faculty")
-                Dim view As New DataView(tables(0))
-                source1.DataSource = view
-                Me.dgvFaculty.DataSource = view
-                myConnection.Close()
-                'ElseIf TabControl1.SelectedTab Is tabEmployers Then
-                '     doesnt exist yet
-            ElseIf TabControl1.SelectedTab Is tabAlumni Then
-                DeleteQuery = "delete * from [Alumni] where ID = @ID"
-                Dim cmd As OleDbCommand = New OleDbCommand(DeleteQuery, myConnection)
-                myConnection.Open()
-                cmd.Parameters.AddWithValue("@ID", dgvOutputAlumni.CurrentRow.Cells(0).Value.ToString)
-                cmd.ExecuteNonQuery()
-                cmd.Dispose()
-                Dim da As OleDbDataAdapter
-                Dim ds As DataSet
-                Dim tables As DataTableCollection
-                Dim source1 As New BindingSource
-                ds = New DataSet
-                tables = ds.Tables
-                da = New OleDbDataAdapter("Select * from [Alumni]", myConnection)
-                da.Fill(ds, "Alumni")
-                Dim view As New DataView(tables(0))
-                source1.DataSource = view
-                Me.dgvOutputAlumni.DataSource = view
-                myConnection.Close()
+                name = "Faculty"
+            ElseIf TabControl1.SelectedTab Is tabISClub Then
+                name = "ISC"
             ElseIf TabControl1.SelectedTab Is tabMajors Then
-                DeleteQuery = "delete * from [Majors] where ID = @ID"
-                Dim cmd As OleDbCommand = New OleDbCommand(DeleteQuery, myConnection)
-                myConnection.Open()
-                cmd.Parameters.AddWithValue("@ID", dgvMajors.CurrentRow.Cells(0).Value.ToString)
-                cmd.ExecuteNonQuery()
-                cmd.Dispose()
-                Dim da As OleDbDataAdapter
-                Dim ds As DataSet
-                Dim tables As DataTableCollection
-                Dim source1 As New BindingSource
-                ds = New DataSet
-                tables = ds.Tables
-                da = New OleDbDataAdapter("Select * from [Majors]", myConnection)
-                da.Fill(ds, "Majors")
-                Dim view As New DataView(tables(0))
-                source1.DataSource = view
-                Me.dgvAdvisoryBoard.DataSource = view
-                myConnection.Close()
+                name = "Majors"
+            ElseIf TabControl1.SelectedTab Is tabAlumni Then
+                name = "Alumni"
             ElseIf TabControl1.SelectedTab Is tabHighschool Then
-                DeleteQuery = "delete * from [High Schools] where ID = @ID"
-                Dim cmd As OleDbCommand = New OleDbCommand(DeleteQuery, myConnection)
-                myConnection.Open()
-                cmd.Parameters.AddWithValue("@ID", dgvHighSchool.CurrentRow.Cells(0).Value.ToString)
-                cmd.ExecuteNonQuery()
-                cmd.Dispose()
-                Dim da As OleDbDataAdapter
-                Dim ds As DataSet
-                Dim tables As DataTableCollection
-                Dim source1 As New BindingSource
-                ds = New DataSet
-                tables = ds.Tables
-                da = New OleDbDataAdapter("Select * from [High Schools]", myConnection)
-                da.Fill(ds, "High Schools")
-                Dim view As New DataView(tables(0))
-                source1.DataSource = view
-                Me.dgvHighSchool.DataSource = view
-                myConnection.Close()
-                'ElseIf TabControl1.SelectedTab Is tabInternships Then
-                '   doesnt exist yet
-                'ElseIf TabControl1.SelectedTab Is tabNetworkingGroups Then
-                '    doesnt exist yet
+                name = "High Schools"
+            ElseIf TabControl1.SelectedTab Is tabInternships Then
+                name = "Internships"
+            ElseIf TabControl1.SelectedTab Is tabNetworkingGroups Then
+                name = "Networking Groups"
             End If
-            MessageBox.Show("Contact has been deleted.", "Complete!")
+            If dgvDict.ContainsKey(name) Then 'Make sure name exists as a dgv
+                db.Delete(name, dgvDict(name).CurrentRow.Cells(0).Value.ToString)
+                dgvAdvisoryBoard.DataSource = db.FillTable(name)
+                MessageBox.Show("Contact has been deleted.", "Complete!")
+            End If
         ElseIf MessageBox.Show("Are you sure you want to delete this contact?", "Delete Contact", MessageBoxButtons.YesNo) = MsgBoxResult.No Then
             MessageBox.Show("No changes have been made.")
         End If
-
     End Sub
-
 
 End Class
