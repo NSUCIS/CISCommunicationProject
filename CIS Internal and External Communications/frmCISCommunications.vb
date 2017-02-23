@@ -1,8 +1,8 @@
 ﻿Imports System.Data.OleDb
 Public Class frmCISCommunications
 
-    Dim db As DBManager
-    Dim dgvDict As Dictionary(Of String, DataGridView) = New Dictionary(Of String, DataGridView)
+    Public db As DBManager
+    Public dgvDict As Dictionary(Of String, DataGridView) = New Dictionary(Of String, DataGridView)
 
     Private Sub frmCISCommunications_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frmLogin.ShowDialog()
