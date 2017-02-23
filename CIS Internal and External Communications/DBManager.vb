@@ -45,6 +45,20 @@ Public Class DBManager
         End If
     End Sub
 
+    Public Sub Add(cmd As OleDbCommand)
+        Try
+            con.Open()
+            cmd.Connection = con
+            cmd.ExecuteNonQuery()
+            con.Close()
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        End Try
+        If con.State = ConnectionState.Open Then
+            con.Close()
+        End If
+    End Sub
+
     Public Function FillTable(Table As String) As DataView
         Dim view As New DataView
         ds = New DataSet
