@@ -22,8 +22,17 @@ Partial Class frmAddNetworkingGroupContact
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'frmAddNetworkingGroupContact
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Silver
+        Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.Name = "frmAddNetworkingGroupContact"
         Me.Text = "frmAddNetworkingGroupContact"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class

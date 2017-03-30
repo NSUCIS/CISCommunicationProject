@@ -24,11 +24,15 @@ Partial Class frmAddAlumniContact
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtGraduationYear = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtDegree = New System.Windows.Forms.TextBox()
         Me.txtMajor = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtState = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtCity = New System.Windows.Forms.TextBox()
         Me.txtEmailAddress = New System.Windows.Forms.TextBox()
@@ -37,10 +41,6 @@ Partial Class frmAddAlumniContact
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtState = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtGraduationYear = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -72,6 +72,22 @@ Partial Class frmAddAlumniContact
         Me.GroupBox2.TabIndex = 20
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Education Information"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(6, 119)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(119, 18)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "Graduation Year:"
+        '
+        'txtGraduationYear
+        '
+        Me.txtGraduationYear.Location = New System.Drawing.Point(139, 116)
+        Me.txtGraduationYear.Name = "txtGraduationYear"
+        Me.txtGraduationYear.Size = New System.Drawing.Size(156, 26)
+        Me.txtGraduationYear.TabIndex = 8
         '
         'Label7
         '
@@ -123,6 +139,22 @@ Partial Class frmAddAlumniContact
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Contact Information"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 151)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(44, 18)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "State:"
+        '
+        'txtState
+        '
+        Me.txtState.Location = New System.Drawing.Point(95, 148)
+        Me.txtState.Name = "txtState"
+        Me.txtState.Size = New System.Drawing.Size(194, 26)
+        Me.txtState.TabIndex = 4
         '
         'Label4
         '
@@ -188,38 +220,6 @@ Partial Class frmAddAlumniContact
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "First Name:"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 151)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(44, 18)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "State:"
-        '
-        'txtState
-        '
-        Me.txtState.Location = New System.Drawing.Point(95, 148)
-        Me.txtState.Name = "txtState"
-        Me.txtState.Size = New System.Drawing.Size(194, 26)
-        Me.txtState.TabIndex = 4
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(6, 119)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(119, 18)
-        Me.Label9.TabIndex = 18
-        Me.Label9.Text = "Graduation Year:"
-        '
-        'txtGraduationYear
-        '
-        Me.txtGraduationYear.Location = New System.Drawing.Point(139, 116)
-        Me.txtGraduationYear.Name = "txtGraduationYear"
-        Me.txtGraduationYear.Size = New System.Drawing.Size(156, 26)
-        Me.txtGraduationYear.TabIndex = 8
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(164, 477)
@@ -233,14 +233,14 @@ Partial Class frmAddAlumniContact
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Info
+        Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(415, 524)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Constantia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmAddAlumniContact"
         Me.Text = "Add Alumni Contact"
         Me.GroupBox2.ResumeLayout(False)

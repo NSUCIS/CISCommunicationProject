@@ -23,6 +23,8 @@ Partial Class frmAddFacultyContact
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtPhoneNumber = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtPosition = New System.Windows.Forms.TextBox()
         Me.txtEmailAddress = New System.Windows.Forms.TextBox()
@@ -33,8 +35,6 @@ Partial Class frmAddFacultyContact
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtPhoneNumber = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,13 +51,31 @@ Partial Class frmAddFacultyContact
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(15, 61)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(449, 224)
         Me.GroupBox1.TabIndex = 21
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Contact Information"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(11, 141)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(112, 18)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = "Phone Number:"
+        '
+        'txtPhoneNumber
+        '
+        Me.txtPhoneNumber.Location = New System.Drawing.Point(131, 138)
+        Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPhoneNumber.Name = "txtPhoneNumber"
+        Me.txtPhoneNumber.Size = New System.Drawing.Size(200, 26)
+        Me.txtPhoneNumber.TabIndex = 4
         '
         'Label4
         '
@@ -72,7 +90,7 @@ Partial Class frmAddFacultyContact
         'txtPosition
         '
         Me.txtPosition.Location = New System.Drawing.Point(131, 101)
-        Me.txtPosition.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPosition.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPosition.Name = "txtPosition"
         Me.txtPosition.Size = New System.Drawing.Size(200, 26)
         Me.txtPosition.TabIndex = 3
@@ -80,7 +98,7 @@ Partial Class frmAddFacultyContact
         'txtEmailAddress
         '
         Me.txtEmailAddress.Location = New System.Drawing.Point(131, 175)
-        Me.txtEmailAddress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtEmailAddress.Margin = New System.Windows.Forms.Padding(4)
         Me.txtEmailAddress.Name = "txtEmailAddress"
         Me.txtEmailAddress.Size = New System.Drawing.Size(301, 26)
         Me.txtEmailAddress.TabIndex = 5
@@ -88,7 +106,7 @@ Partial Class frmAddFacultyContact
         'txtLName
         '
         Me.txtLName.Location = New System.Drawing.Point(131, 64)
-        Me.txtLName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtLName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtLName.Name = "txtLName"
         Me.txtLName.Size = New System.Drawing.Size(200, 26)
         Me.txtLName.TabIndex = 2
@@ -96,7 +114,7 @@ Partial Class frmAddFacultyContact
         'txtFName
         '
         Me.txtFName.Location = New System.Drawing.Point(131, 27)
-        Me.txtFName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtFName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtFName.Name = "txtFName"
         Me.txtFName.Size = New System.Drawing.Size(200, 26)
         Me.txtFName.TabIndex = 1
@@ -134,7 +152,7 @@ Partial Class frmAddFacultyContact
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(194, 327)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(91, 38)
         Me.Button1.TabIndex = 6
@@ -153,35 +171,17 @@ Partial Class frmAddFacultyContact
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "New Faculty Member"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(11, 141)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(112, 18)
-        Me.Label6.TabIndex = 16
-        Me.Label6.Text = "Phone Number:"
-        '
-        'txtPhoneNumber
-        '
-        Me.txtPhoneNumber.Location = New System.Drawing.Point(131, 138)
-        Me.txtPhoneNumber.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtPhoneNumber.Name = "txtPhoneNumber"
-        Me.txtPhoneNumber.Size = New System.Drawing.Size(200, 26)
-        Me.txtPhoneNumber.TabIndex = 4
-        '
         'frmAddFacultyContact
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Info
+        Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(478, 382)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Constantia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmAddFacultyContact"
         Me.Text = "frmAddFacultyContact"
         Me.GroupBox1.ResumeLayout(False)

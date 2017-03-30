@@ -161,7 +161,7 @@ Partial Class frmAddISCContact
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Info
+        Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(426, 371)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button1)

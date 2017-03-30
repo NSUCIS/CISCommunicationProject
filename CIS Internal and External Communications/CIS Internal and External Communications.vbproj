@@ -179,11 +179,17 @@
     <EmbeddedResource Include="frmAddHighSchoolContact.resx">
       <DependentUpon>frmAddHighSchoolContact.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddInternshipContact.resx">
+      <DependentUpon>frmAddInternshipContact.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddISCContact.resx">
       <DependentUpon>frmAddISCContact.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddMajorContact.resx">
       <DependentUpon>frmAddMajorContact.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddNetworkingGroupContact.resx">
+      <DependentUpon>frmAddNetworkingGroupContact.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCISCommunications.resx">
       <DependentUpon>frmCISCommunications.vb</DependentUpon>
