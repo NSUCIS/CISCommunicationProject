@@ -76,6 +76,7 @@ Partial Class frmCISCommunications
         'btnAdd
         '
         Me.btnAdd.Font = New System.Drawing.Font("Constantia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.Color.Maroon
         Me.btnAdd.Location = New System.Drawing.Point(30, 318)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAdd.Name = "btnAdd"
@@ -87,6 +88,7 @@ Partial Class frmCISCommunications
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Constantia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrint.ForeColor = System.Drawing.Color.Maroon
         Me.btnPrint.Location = New System.Drawing.Point(470, 318)
         Me.btnPrint.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPrint.Name = "btnPrint"
@@ -98,6 +100,7 @@ Partial Class frmCISCommunications
         'btnEmail
         '
         Me.btnEmail.Font = New System.Drawing.Font("Constantia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEmail.ForeColor = System.Drawing.Color.Maroon
         Me.btnEmail.Location = New System.Drawing.Point(690, 318)
         Me.btnEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEmail.Name = "btnEmail"
@@ -363,6 +366,7 @@ Partial Class frmCISCommunications
         'btnDeleteContact
         '
         Me.btnDeleteContact.Font = New System.Drawing.Font("Constantia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeleteContact.ForeColor = System.Drawing.Color.Maroon
         Me.btnDeleteContact.Location = New System.Drawing.Point(250, 318)
         Me.btnDeleteContact.Name = "btnDeleteContact"
         Me.btnDeleteContact.Size = New System.Drawing.Size(120, 27)
@@ -396,7 +400,7 @@ Partial Class frmCISCommunications
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(140, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(841, 500)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
