@@ -70,8 +70,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataGridViewPrinter.vb" />
     <Compile Include="DBManager.vb" />
     <Compile Include="emailMoDsquad.vb" />
+    <Compile Include="ExtendedMethods.vb" />
     <Compile Include="frmAddAlumniContact.Designer.vb">
       <DependentUpon>frmAddAlumniContact.vb</DependentUpon>
     </Compile>
@@ -140,6 +142,12 @@
     <Compile Include="frmCISCommunications.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmEmailForm.Designer.vb">
+      <DependentUpon>frmEmailForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmailForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +202,9 @@
     <EmbeddedResource Include="frmCISCommunications.resx">
       <DependentUpon>frmCISCommunications.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEmailForm.resx">
+      <DependentUpon>frmEmailForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +242,7 @@
     <Content Include="CIS Communications Contacts.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="DataGridViewPrinter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

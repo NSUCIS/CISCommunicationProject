@@ -22,7 +22,6 @@ Partial Class frmAddAlumniContact
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtGraduationYear = New System.Windows.Forms.TextBox()
@@ -46,18 +45,6 @@ Partial Class frmAddAlumniContact
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.Window
-        Me.Label1.Font = New System.Drawing.Font("Constantia", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(106, 4)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(202, 26)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "New Alumni Contact"
-        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label9)
@@ -66,9 +53,11 @@ Partial Class frmAddAlumniContact
         Me.GroupBox2.Controls.Add(Me.txtDegree)
         Me.GroupBox2.Controls.Add(Me.txtMajor)
         Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.GroupBox2.Location = New System.Drawing.Point(13, 302)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(312, 157)
+        Me.GroupBox2.Size = New System.Drawing.Size(388, 157)
         Me.GroupBox2.TabIndex = 20
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Education Information"
@@ -78,15 +67,16 @@ Partial Class frmAddAlumniContact
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(6, 119)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(119, 18)
+        Me.Label9.Size = New System.Drawing.Size(109, 14)
         Me.Label9.TabIndex = 18
         Me.Label9.Text = "Graduation Year:"
         '
         'txtGraduationYear
         '
-        Me.txtGraduationYear.Location = New System.Drawing.Point(139, 116)
+        Me.txtGraduationYear.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.txtGraduationYear.Location = New System.Drawing.Point(118, 116)
         Me.txtGraduationYear.Name = "txtGraduationYear"
-        Me.txtGraduationYear.Size = New System.Drawing.Size(156, 26)
+        Me.txtGraduationYear.Size = New System.Drawing.Size(156, 22)
         Me.txtGraduationYear.TabIndex = 8
         '
         'Label7
@@ -94,22 +84,24 @@ Partial Class frmAddAlumniContact
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(6, 78)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(58, 18)
+        Me.Label7.Size = New System.Drawing.Size(54, 14)
         Me.Label7.TabIndex = 16
         Me.Label7.Text = "Degree:"
         '
         'txtDegree
         '
-        Me.txtDegree.Location = New System.Drawing.Point(98, 75)
+        Me.txtDegree.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.txtDegree.Location = New System.Drawing.Point(118, 75)
         Me.txtDegree.Name = "txtDegree"
-        Me.txtDegree.Size = New System.Drawing.Size(197, 26)
+        Me.txtDegree.Size = New System.Drawing.Size(194, 22)
         Me.txtDegree.TabIndex = 7
         '
         'txtMajor
         '
-        Me.txtMajor.Location = New System.Drawing.Point(98, 34)
+        Me.txtMajor.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.txtMajor.Location = New System.Drawing.Point(118, 34)
         Me.txtMajor.Name = "txtMajor"
-        Me.txtMajor.Size = New System.Drawing.Size(197, 26)
+        Me.txtMajor.Size = New System.Drawing.Size(194, 22)
         Me.txtMajor.TabIndex = 6
         '
         'Label6
@@ -117,7 +109,7 @@ Partial Class frmAddAlumniContact
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(6, 37)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(51, 18)
+        Me.Label6.Size = New System.Drawing.Size(46, 14)
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "Major:"
         '
@@ -133,9 +125,11 @@ Partial Class frmAddAlumniContact
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 52)
+        Me.GroupBox1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(388, 231)
+        Me.GroupBox1.Size = New System.Drawing.Size(391, 231)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Contact Information"
@@ -145,15 +139,16 @@ Partial Class frmAddAlumniContact
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(6, 151)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(44, 18)
+        Me.Label8.Size = New System.Drawing.Size(45, 14)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "State:"
         '
         'txtState
         '
-        Me.txtState.Location = New System.Drawing.Point(95, 148)
+        Me.txtState.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.txtState.Location = New System.Drawing.Point(118, 148)
         Me.txtState.Name = "txtState"
-        Me.txtState.Size = New System.Drawing.Size(194, 26)
+        Me.txtState.Size = New System.Drawing.Size(194, 22)
         Me.txtState.TabIndex = 4
         '
         'Label4
@@ -161,36 +156,40 @@ Partial Class frmAddAlumniContact
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(6, 111)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(38, 18)
+        Me.Label4.Size = New System.Drawing.Size(35, 14)
         Me.Label4.TabIndex = 14
         Me.Label4.Text = "City:"
         '
         'txtCity
         '
-        Me.txtCity.Location = New System.Drawing.Point(95, 108)
+        Me.txtCity.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.txtCity.Location = New System.Drawing.Point(118, 108)
         Me.txtCity.Name = "txtCity"
-        Me.txtCity.Size = New System.Drawing.Size(194, 26)
+        Me.txtCity.Size = New System.Drawing.Size(194, 22)
         Me.txtCity.TabIndex = 3
         '
         'txtEmailAddress
         '
+        Me.txtEmailAddress.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.txtEmailAddress.Location = New System.Drawing.Point(118, 188)
         Me.txtEmailAddress.Name = "txtEmailAddress"
-        Me.txtEmailAddress.Size = New System.Drawing.Size(247, 26)
+        Me.txtEmailAddress.Size = New System.Drawing.Size(194, 22)
         Me.txtEmailAddress.TabIndex = 5
         '
         'txtLName
         '
-        Me.txtLName.Location = New System.Drawing.Point(95, 68)
+        Me.txtLName.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.txtLName.Location = New System.Drawing.Point(118, 67)
         Me.txtLName.Name = "txtLName"
-        Me.txtLName.Size = New System.Drawing.Size(194, 26)
+        Me.txtLName.Size = New System.Drawing.Size(194, 22)
         Me.txtLName.TabIndex = 2
         '
         'txtFName
         '
-        Me.txtFName.Location = New System.Drawing.Point(95, 28)
+        Me.txtFName.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.txtFName.Location = New System.Drawing.Point(118, 28)
         Me.txtFName.Name = "txtFName"
-        Me.txtFName.Size = New System.Drawing.Size(194, 26)
+        Me.txtFName.Size = New System.Drawing.Size(194, 22)
         Me.txtFName.TabIndex = 1
         '
         'Label5
@@ -198,7 +197,7 @@ Partial Class frmAddAlumniContact
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(6, 191)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(106, 18)
+        Me.Label5.Size = New System.Drawing.Size(95, 14)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Email Address:"
         '
@@ -207,38 +206,40 @@ Partial Class frmAddAlumniContact
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(6, 70)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(80, 18)
+        Me.Label3.Size = New System.Drawing.Size(74, 14)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Last Name:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Label2.Location = New System.Drawing.Point(6, 31)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 18)
+        Me.Label2.Size = New System.Drawing.Size(74, 14)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "First Name:"
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.Gray
+        Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(164, 477)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(87, 35)
         Me.Button1.TabIndex = 9
         Me.Button1.Text = "Save"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'frmAddAlumniContact
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Silver
+        Me.BackColor = System.Drawing.Color.Maroon
         Me.ClientSize = New System.Drawing.Size(415, 524)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Constantia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmAddAlumniContact"
@@ -248,10 +249,8 @@ Partial Class frmAddAlumniContact
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txtDegree As System.Windows.Forms.TextBox

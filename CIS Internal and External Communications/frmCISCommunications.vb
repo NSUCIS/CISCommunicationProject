@@ -1,30 +1,63 @@
 ﻿Imports System.Data.OleDb
-Public Class frmCISCommunications
+Imports System.Net.Mail
 
+
+Public Class frmCISCommunications
+    Public colnum As Integer
     Public db As DBManager
     Public dgvDict As Dictionary(Of String, DataGridView) = New Dictionary(Of String, DataGridView)
     Private nRows As Integer = 0
     Private newpage As Boolean = True
+    Public addresses As String
 
     Private Sub frmCISCommunications_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        frmLogin.ShowDialog()
-        db = New DBManager
-        'Variables to make filling tables easier in control loops
-        Dim tableNames = New String() {"Advisory Board", "Faculty", "ISC", "Majors", "Alumni", "High Schools", "Internships", "Networking Groups"}
-        Dim dgvArray = New DataGridView() {dgvAdvisoryBoard, dgvFaculty, dgvISC, dgvMajors, dgvAlumni, dgvHighSchool, dgvInternships, dgvNetworkingGroups}
 
-        For i As Integer = 0 To tableNames.Count - 1 'For all the names of tables...
-            dgvDict.Add(tableNames(i), dgvArray(i))  '  Add the entry to the dictionary
-        Next
-        'Use the dictionary to loop through all the DataGridViews and fill their tables
-        For Each name As String In dgvDict.Keys
-            dgvDict(name).DataSource = db.FillTable(name)
-            dgvDict(name).ClearSelection()
-        Next
+        frmLogin.ShowDialog()
+        loadDgvInfo()
 
     End Sub
+    Private Sub frmCISCommunications_SizeChange() Handles Me.SizeChanged
+        loadDgvInfo()
 
+    End Sub
+    Private Sub markNullCells()
+        Dim dgv As DataGridView = determineCurrentDGV()
+        dgv.AllowUserToAddRows = False
+        For i As Integer = 0 To dgv.Rows.Count - 1
+            For ColNo As Integer = 0 To dgv.ColumnCount - 1
+
+                If dgv.Rows(i).Cells(ColNo).Value Is Nothing OrElse dgv.Rows(i).Cells(ColNo).Value.ToString.Trim = "" Then
+                    If dgv.Rows(i) IsNot Nothing Then
+                        dgv.Rows(i).Cells(ColNo).Style.BackColor = ColorTranslator.FromHtml("#FF9999")
+                    End If
+                End If
+
+            Next
+        Next
+    End Sub
+    Private Sub loadDgvInfo()
+        db = New DBManager
+        dgvDict.Clear()
+
+        'Variables to make filling tables easier in control loops
+        Dim tableNames = New String() {"Advisory Board", "Faculty", "ISC", "Majors", "Alumni", "High Schools", "Internships", "Networking Groups"}
+            Dim dgvArray = New DataGridView() {dgvAdvisoryBoard, dgvFaculty, dgvISC, dgvMajors, dgvAlumni, dgvHighSchool, dgvInternships, dgvNetworkingGroups}
+            Dim dgv As DataGridView = determineCurrentDGV()
+            For i As Integer = 0 To tableNames.Count - 1 'For all the names of tables...
+                dgvDict.Add(tableNames(i), dgvArray(i))  '  Add the entry to the dictionary
+            Next
+            'Use the dictionary to loop through all the DataGridViews and fill their tables
+            For Each name As String In dgvDict.Keys
+                dgvDict(name).DataSource = db.FillTable(name)
+
+                dgvDict(name).ClearSelection()
+            Next
+
+            markNullCells()
+
+    End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        PrintDocument1.Dispose()
         PrintPreviewDialog1.Document = PrintDocument1
         PrintPreviewDialog1.ShowDialog()
 
@@ -32,6 +65,7 @@ Public Class frmCISCommunications
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
         Dim dgv As DataGridView = determineCurrentDGV()
+
         If dgv.SelectedRows IsNot Nothing Then
             Dim selView As DataGridView = New DataGridView()
             Dim selColms As DataGridViewColumnCollection = selView.Columns
@@ -155,30 +189,62 @@ Public Class frmCISCommunications
 
     Private Sub tabChangeClearSelection() Handles TabControl1.SelectedIndexChanged
         Dim dgv As DataGridView = determineCurrentDGV()
-        dgv.ClearSelection()
+        Using pic = New PictureBox
+            Dim path As String = My.Application.Info.DirectoryPath
+            Dim imgfile As String = IO.Path.Combine(path, "150x150.gif")
+            pic.Width = 150
+            pic.Height = 150
+            pic.Location = New Point((Me.DisplayRectangle.Width / 2) - (pic.Width * 0.5), (Me.DisplayRectangle.Height / 2) - (pic.Height * 0.5))
+            pic.ImageLocation = imgfile
+            pic.Load()
+            Me.Controls.Add(pic)
+            pic.Visible = True
+            pic.BringToFront()
+            determineCurrentDGV().SendToBack()
+            TabControl1.SendToBack()
+
+
+
+
+            pic.Refresh()
+            pic.BringToFront()
+            loadDgvInfo()
+            dgv.ClearSelection()
+            ExtensionMethods.DoubleBuffered(dgv, True)
+            dgv.Dock = DockStyle.Fill
+        End Using
     End Sub
 
     Private Function determineCurrentDGV() As DataGridView
         Dim dgv As DataGridView = Nothing
         If TabControl1.SelectedTab Is tabAdvisoryBoard Then
             dgv = dgvAdvisoryBoard
+            colnum = 5
+
         ElseIf TabControl1.SelectedTab Is tabISClub Then
             dgv = dgvISC
+            colnum = 4
         ElseIf TabControl1.SelectedTab Is tabFaculty Then
             dgv = dgvFaculty
+            colnum = 4
         ElseIf TabControl1.SelectedTab Is tabEmployers Then
             dgv = dgvEmployers
+            colnum = 4
         ElseIf TabControl1.SelectedTab Is tabAlumni Then
             dgv = dgvAlumni
+            colnum = 5
         ElseIf TabControl1.SelectedTab Is tabMajors Then
             dgv = dgvMajors
+            colnum = 3
         ElseIf TabControl1.SelectedTab Is tabHighschool Then
             dgv = dgvHighSchool
+
         ElseIf TabControl1.SelectedTab Is tabInternships Then
             dgv = dgvInternships
         ElseIf TabControl1.SelectedTab Is tabNetworkingGroups Then
             dgv = dgvNetworkingGroups
         End If
+        ExtensionMethods.DoubleBuffered(dgv, True)
         Return dgv
     End Function
 
@@ -202,6 +268,7 @@ Public Class frmCISCommunications
         ElseIf TabControl1.SelectedTab Is tabNetworkingGroups Then
             frmAddNetworkingGroupContact.Show()
         End If
+        loadDgvInfo()
     End Sub
 
     Private Sub btnDeleteContact_Click(sender As Object, e As EventArgs) Handles btnDeleteContact.Click
@@ -232,6 +299,22 @@ Public Class frmCISCommunications
         ElseIf MessageBox.Show("Are you sure you want to delete this contact?", "Delete Contact", MessageBoxButtons.YesNo) = MsgBoxResult.No Then
             MessageBox.Show("No changes have been made.")
         End If
+        loadDgvInfo()
     End Sub
 
+    Private Sub btnEmail_Click(sender As Object, e As EventArgs) Handles btnEmail.Click
+        Dim dgv As DataGridView = determineCurrentDGV()
+        Dim dgvRow As DataGridViewRow
+        addresses = ""
+
+        For Each dgvRow In dgv.SelectedRows
+            frmEmailForm.lstAddresses.Items.Add(dgvRow.Cells(colnum).Value) ' Shows value form fifth column of each selected row
+        Next
+
+        frmEmailForm.Show()
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
 End Class

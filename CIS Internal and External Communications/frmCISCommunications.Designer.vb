@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmCISCommunications
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmCISCommunications
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCISCommunications))
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -50,6 +50,7 @@ Partial Class frmCISCommunications
         Me.btnDeleteContact = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.tabAlumni.SuspendLayout()
         CType(Me.dgvAlumni, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabFaculty.SuspendLayout()
@@ -71,43 +72,51 @@ Partial Class frmCISCommunications
         CType(Me.dgvNetworkingGroups, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnAdd
         '
-        Me.btnAdd.Font = New System.Drawing.Font("Constantia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.ForeColor = System.Drawing.Color.Maroon
-        Me.btnAdd.Location = New System.Drawing.Point(30, 318)
+        Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnAdd.BackColor = System.Drawing.Color.Gray
+        Me.btnAdd.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnAdd.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.Color.Black
+        Me.btnAdd.Location = New System.Drawing.Point(17, 20)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(120, 27)
         Me.btnAdd.TabIndex = 2
         Me.btnAdd.Text = "Add a Contact"
-        Me.btnAdd.UseVisualStyleBackColor = True
+        Me.btnAdd.UseVisualStyleBackColor = False
         '
         'btnPrint
         '
-        Me.btnPrint.Font = New System.Drawing.Font("Constantia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrint.ForeColor = System.Drawing.Color.Maroon
-        Me.btnPrint.Location = New System.Drawing.Point(470, 318)
+        Me.btnPrint.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnPrint.BackColor = System.Drawing.Color.Gray
+        Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrint.ForeColor = System.Drawing.Color.Black
+        Me.btnPrint.Location = New System.Drawing.Point(449, 19)
         Me.btnPrint.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(120, 27)
         Me.btnPrint.TabIndex = 3
-        Me.btnPrint.Text = "Print Contact List"
-        Me.btnPrint.UseVisualStyleBackColor = True
+        Me.btnPrint.Text = "Print Selected"
+        Me.btnPrint.UseVisualStyleBackColor = False
         '
         'btnEmail
         '
-        Me.btnEmail.Font = New System.Drawing.Font("Constantia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEmail.ForeColor = System.Drawing.Color.Maroon
-        Me.btnEmail.Location = New System.Drawing.Point(690, 318)
+        Me.btnEmail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnEmail.BackColor = System.Drawing.Color.Gray
+        Me.btnEmail.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEmail.ForeColor = System.Drawing.Color.Black
+        Me.btnEmail.Location = New System.Drawing.Point(651, 20)
         Me.btnEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEmail.Name = "btnEmail"
         Me.btnEmail.Size = New System.Drawing.Size(120, 27)
         Me.btnEmail.TabIndex = 4
-        Me.btnEmail.Text = "Email Contact"
-        Me.btnEmail.UseVisualStyleBackColor = True
+        Me.btnEmail.Text = "Email Selected"
+        Me.btnEmail.UseVisualStyleBackColor = False
         '
         'PrintPreviewDialog1
         '
@@ -216,17 +225,21 @@ Partial Class frmCISCommunications
         Me.dgvAdvisoryBoard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvAdvisoryBoard.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvAdvisoryBoard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvAdvisoryBoard.Location = New System.Drawing.Point(0, 44)
+        Me.dgvAdvisoryBoard.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvAdvisoryBoard.Location = New System.Drawing.Point(2, 2)
         Me.dgvAdvisoryBoard.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvAdvisoryBoard.Name = "dgvAdvisoryBoard"
         Me.dgvAdvisoryBoard.RowHeadersVisible = False
         Me.dgvAdvisoryBoard.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgvAdvisoryBoard.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvAdvisoryBoard.Size = New System.Drawing.Size(782, 184)
+        Me.dgvAdvisoryBoard.Size = New System.Drawing.Size(780, 220)
         Me.dgvAdvisoryBoard.TabIndex = 0
         '
         'TabControl1
         '
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.tabAdvisoryBoard)
         Me.TabControl1.Controls.Add(Me.tabISClub)
         Me.TabControl1.Controls.Add(Me.tabFaculty)
@@ -236,7 +249,7 @@ Partial Class frmCISCommunications
         Me.TabControl1.Controls.Add(Me.tabHighschool)
         Me.TabControl1.Controls.Add(Me.tabInternships)
         Me.TabControl1.Controls.Add(Me.tabNetworkingGroups)
-        Me.TabControl1.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(26, 28)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabControl1.Name = "TabControl1"
@@ -360,22 +373,25 @@ Partial Class frmCISCommunications
         Me.dgvNetworkingGroups.Name = "dgvNetworkingGroups"
         Me.dgvNetworkingGroups.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
         Me.dgvNetworkingGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvNetworkingGroups.Size = New System.Drawing.Size(781, 226)
+        Me.dgvNetworkingGroups.Size = New System.Drawing.Size(780, 226)
         Me.dgvNetworkingGroups.TabIndex = 2
         '
         'btnDeleteContact
         '
-        Me.btnDeleteContact.Font = New System.Drawing.Font("Constantia", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDeleteContact.ForeColor = System.Drawing.Color.Maroon
-        Me.btnDeleteContact.Location = New System.Drawing.Point(250, 318)
+        Me.btnDeleteContact.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnDeleteContact.BackColor = System.Drawing.Color.Gray
+        Me.btnDeleteContact.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeleteContact.ForeColor = System.Drawing.Color.Black
+        Me.btnDeleteContact.Location = New System.Drawing.Point(222, 19)
         Me.btnDeleteContact.Name = "btnDeleteContact"
         Me.btnDeleteContact.Size = New System.Drawing.Size(120, 27)
         Me.btnDeleteContact.TabIndex = 7
         Me.btnDeleteContact.Text = "Delete Contact"
-        Me.btnDeleteContact.UseVisualStyleBackColor = True
+        Me.btnDeleteContact.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(654, 363)
@@ -387,6 +403,7 @@ Partial Class frmCISCommunications
         '
         'PictureBox2
         '
+        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.InitialImage = CType(resources.GetObject("PictureBox2.InitialImage"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(30, 363)
@@ -396,23 +413,33 @@ Partial Class frmCISCommunications
         Me.PictureBox2.TabIndex = 9
         Me.PictureBox2.TabStop = False
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.GroupBox1.Controls.Add(Me.btnDeleteContact)
+        Me.GroupBox1.Controls.Add(Me.btnEmail)
+        Me.GroupBox1.Controls.Add(Me.btnPrint)
+        Me.GroupBox1.Controls.Add(Me.btnAdd)
+        Me.GroupBox1.Location = New System.Drawing.Point(26, 293)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(792, 64)
+        Me.GroupBox1.TabIndex = 10
+        Me.GroupBox1.TabStop = False
+        '
         'frmCISCommunications
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Silver
+        Me.BackColor = System.Drawing.Color.Maroon
         Me.ClientSize = New System.Drawing.Size(841, 500)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.btnDeleteContact)
-        Me.Controls.Add(Me.btnEmail)
-        Me.Controls.Add(Me.btnPrint)
-        Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.TabControl1)
+        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmCISCommunications"
-        Me.Text = "CIS Communications"
         Me.tabAlumni.ResumeLayout(False)
         CType(Me.dgvAlumni, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabFaculty.ResumeLayout(False)
@@ -434,6 +461,7 @@ Partial Class frmCISCommunications
         CType(Me.dgvNetworkingGroups, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -464,4 +492,5 @@ Partial Class frmCISCommunications
     Friend WithEvents btnDeleteContact As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents GroupBox1 As GroupBox
 End Class
