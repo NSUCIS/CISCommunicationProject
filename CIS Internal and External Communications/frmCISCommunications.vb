@@ -41,21 +41,22 @@ Public Class frmCISCommunications
 
         'Variables to make filling tables easier in control loops
         Dim tableNames = New String() {"Advisory Board", "Faculty", "ISC", "Majors", "Alumni", "High Schools", "Internships", "Networking Groups"}
-            Dim dgvArray = New DataGridView() {dgvAdvisoryBoard, dgvFaculty, dgvISC, dgvMajors, dgvAlumni, dgvHighSchool, dgvInternships, dgvNetworkingGroups}
-            Dim dgv As DataGridView = determineCurrentDGV()
-            For i As Integer = 0 To tableNames.Count - 1 'For all the names of tables...
-                dgvDict.Add(tableNames(i), dgvArray(i))  '  Add the entry to the dictionary
-            Next
-            'Use the dictionary to loop through all the DataGridViews and fill their tables
-            For Each name As String In dgvDict.Keys
-                dgvDict(name).DataSource = db.FillTable(name)
+        Dim dgvArray = New DataGridView() {dgvAdvisoryBoard, dgvFaculty, dgvISC, dgvMajors, dgvAlumni, dgvHighSchool, dgvInternships, dgvNetworkingGroups}
+        Dim dgv As DataGridView = determineCurrentDGV()
+        For i As Integer = 0 To tableNames.Count - 1 'For all the names of tables...
+            dgvDict.Add(tableNames(i), dgvArray(i))  '  Add the entry to the dictionary
+        Next
+        'Use the dictionary to loop through all the DataGridViews and fill their tables
+        For Each name As String In dgvDict.Keys
+            dgvDict(name).DataSource = db.FillTable(name)
 
-                dgvDict(name).ClearSelection()
-            Next
+            dgvDict(name).ClearSelection()
+        Next
 
-            markNullCells()
+        markNullCells()
 
     End Sub
+
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         PrintDocument1.Dispose()
         PrintPreviewDialog1.Document = PrintDocument1
@@ -316,5 +317,51 @@ Public Class frmCISCommunications
 
     Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
+    End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        ClearBackColors()
+        markNullCells()
+        If txtSearch.Text IsNot "" Then
+            Dim intIndex As Integer = FindUser(txtSearch.Text)
+            determineCurrentDGV().CurrentCell = determineCurrentDGV().Rows(intIndex).Cells(0)
+        Else
+
+        End If
+    End Sub
+
+    Private Function FindUser(ByVal str As String) As Integer
+        Dim dgv As DataGridView = determineCurrentDGV()
+        Dim intCell As Integer = determineCurrentDGV().CurrentCell.RowIndex
+        Dim gridRow As Integer = 0
+        Dim gridColumn As Integer = 0
+        For Each Row As DataGridViewRow In dgv.Rows
+            For Each column As DataGridViewColumn In dgv.Columns
+                Dim cell As DataGridViewCell = (dgv.Rows(gridRow).Cells(gridColumn))
+                If cell.Value.ToString.ToLower.Contains(str.ToLower) Then
+                    cell.Style.BackColor = Color.Yellow
+                    intCell = gridRow
+                End If
+                gridColumn += 1
+            Next column
+            gridColumn = 0
+            gridRow += 1
+        Next Row
+        Return intCell
+    End Function
+
+    Private Sub ClearBackColors()
+        Dim dgv As DataGridView = determineCurrentDGV()
+        Dim gridRow As Integer = 0
+        Dim gridColumn As Integer = 0
+        For Each Row As DataGridViewRow In dgv.Rows
+            For Each column As DataGridViewColumn In dgv.Columns
+                Dim cell As DataGridViewCell = (dgv.Rows(gridRow).Cells(gridColumn))
+                cell.Style.BackColor = Color.Empty
+                gridColumn += 1
+            Next column
+            gridColumn = 0
+            gridRow += 1
+        Next Row
     End Sub
 End Class
