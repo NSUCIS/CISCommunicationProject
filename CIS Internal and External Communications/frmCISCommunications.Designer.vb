@@ -51,6 +51,8 @@ Partial Class frmCISCommunications
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.tabAlumni.SuspendLayout()
         CType(Me.dgvAlumni, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabFaculty.SuspendLayout()
@@ -426,12 +428,30 @@ Partial Class frmCISCommunications
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(223, 389)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(52, 14)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Search : "
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(281, 386)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(238, 22)
+        Me.txtSearch.TabIndex = 12
+        '
         'frmCISCommunications
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Maroon
         Me.ClientSize = New System.Drawing.Size(841, 500)
+        Me.Controls.Add(Me.txtSearch)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -463,6 +483,7 @@ Partial Class frmCISCommunications
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnAdd As System.Windows.Forms.Button
@@ -493,4 +514,6 @@ Partial Class frmCISCommunications
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtSearch As TextBox
 End Class
